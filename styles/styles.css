@@ -1,0 +1,70 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  transition: all 650ms;
+}
+
+body {
+  min-width: 320px;
+  font-family: Roboto, Arial, sans-serif;
+  color: black;
+  background-color: #fbfbfb;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+picture {
+  display: inline-block;
+}
+
+a:hover, button:hover {
+  transition: all 500ms;
+  opacity: 35%;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (pointer: coarse) {
+  a:hover, button:hover {
+    transition: all 0ms;
+    opacity: 1;
+  }
+}
+.fixed-container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=styles.css.map */

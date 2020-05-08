@@ -1,0 +1,43 @@
+@import "styles";
+@import "fonts";
+
+.fixed-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+p {
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.me-container {
+  margin-top: 25vh;
+}
+
+.noconnection__hello-text {
+  line-height: 70px;
+}
+
+.noconnection__try-text,
+.me-container {
+  line-height: 30px;
+}
+
+.me-container__start-text {
+  font-weight: bold;
+}
+
+.contact-item {
+  font-style: normal;
+  font-weight: bold;
+}
+
+@media (max-width: 350px) {
+  .noconnection__hello-text {
+    font-size: 28px;
+  }
+}

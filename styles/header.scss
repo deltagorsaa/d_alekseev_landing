@@ -1,0 +1,442 @@
+@import "css_ext";
+
+$is-product:true;
+$animation_duration:2500ms;
+$header-container_base_height:768px;
+$me-container-margin-top:209px;
+
+.header-container {
+    height: $header-container_base_height;
+    background-image: url("../img/ellipse.svg");
+    background-size: 804px 629px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    transition: all 500ms;
+    overflow: hidden;
+    padding-top: 11px;
+}
+
+.header-top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @if $is-product==true {
+        animation: $animation_duration linear 0s 1 forwards header-top-container__animation;
+    }
+}
+
+@if $is-product==true {
+    @keyframes header-top-container__animation {
+        from {
+            margin: -70px 0 70px;
+        }
+        to {
+            margin: 0;
+        }
+    }
+}
+
+.header-top-right-container {
+    display: flex;
+    align-items: center;
+}
+
+.contact-item {
+    font-size: 25px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.phone-number-call-back-button {
+    width: 207px;
+    height: 45px;
+
+    color: #f53f4f;
+    background-color: transparent;
+    border: 1px solid #f82370;
+
+    padding: 15px 0;
+    margin-left: 28px;
+}
+
+.header-central-container {
+    display: flex;
+}
+
+.me-container {
+    min-width: 800px;
+    margin-top: $me-container-margin-top;
+
+    @if $is-product==true {
+        animation: $animation_duration linear 0s 1 forwards me-container__animation;
+    }
+}
+
+@if $is-product==true {
+    @keyframes me-container__animation {
+        from {
+            margin-right: 100vw;
+            margin-left: -100vw;
+        }
+        to {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+}
+
+.header-central-container__men-picture {
+    min-width: 600px;
+    align-self: flex-end;
+    margin: 28px 0 0 -29px;
+}
+
+.me-container__name-text {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 103px;
+}
+
+.me-container__spec-text {
+    color: #8993ad;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 50px;
+    display: block;
+}
+
+.me-container__about-me-ext-button {
+    width: 270px;
+    height: 60px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #ff4e2e;
+    border: 0;
+    padding: 21px 72px;
+    margin-top: 35px;
+}
+
+.header-container .symbols-list {
+    display: inline-block;
+    position: relative;
+}
+
+.symbols-list .symbols-list__item {
+    font-weight: 700;
+    position: absolute;
+    display: inline-block;
+    transition: all 0s;
+}
+
+.header-container .symbols-list .symbols-list__item {
+    animation: calc(#{$animation_duration} + 0.5s) linear 0s 1 forwards symbols-list__animation;
+    transition: all 1500ms ease-out 0ms;
+}
+
+@keyframes symbols-list__animation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.symbols-list .symbols-list__item svg {
+    min-width: 70px;
+    max-width: 100px;
+    height: 70px;
+}
+
+.header-container .symbols-list .symbols-list__item:nth-child(1) {
+    font-size: 45px;
+    transform: translate(-245px, 105px) rotate(27deg);
+}
+
+.header-container .symbols-list .symbols-list__item:nth-child(2) {
+    font-size: 57px;
+    transform: translate(-130px, 340px) rotate(18deg);
+}
+
+.header-container .symbols-list .symbols-list__item:nth-child(3) {
+    font-size: 41px;
+    transform: translate(-48px, 615px) rotate(159deg);
+}
+
+.header-container .symbols-list .symbols-list__item:nth-child(4) {
+    font-size: 38px;
+    transform: translate(578px, 492px) rotate(21deg);
+}
+
+.header-container .symbols-list .symbols-list__item:nth-child(5) {
+    font-size: 30px;
+    transform: translate(410px, 104px) rotate(345deg);
+}
+
+.header-container .symbols-list .symbols-list__item:nth-child(6) {
+    font-size: 44px;
+    display: none;
+}
+
+@mixin header_max1550 {
+    .header-container {
+        background-position-x: calc(100% + 374px);
+    }
+}
+
+@mixin header_max1169 {
+    .header-central-container__men-picture {
+        margin-left:-160px;
+    }
+}
+
+@mixin header_max1024 {
+    $bg_ellipse2_base_Y_step:524px;
+    .header-container {
+        background-image: url("../img/_1024/ellipse.svg");
+        background-position:right bottom;
+        background-size: 528px $bg_ellipse2_base_Y_step;
+    }
+
+    .header__navigation-menu_open .phone-number-call-back-button {
+        display: none;
+    }
+
+    .header__navigation-menu_open .symbols-list {
+        z-index: -1;
+    }
+
+    .me-container {
+        min-width: 626px;
+        margin-top:235px;
+    }
+
+    .me-container__spec-text {
+        line-height: 60px;
+    }
+
+    .me-container__name-text {
+        font-size: 54px;
+        line-height: 74px;
+    }
+
+    .me-container__about-me-ext-button {
+        width: 320px;
+        height: 68px;
+        padding: 25px 97px;
+        margin-top: 29px;
+    }
+
+    .header-container .symbols-list .symbols-list__item:nth-child(1) {
+        transform: translate(40px, 130px) rotate(27deg);
+    }
+
+    .header-container .symbols-list .symbols-list__item:nth-child(2) {
+        transform: translate(15px, 606px) rotate(18deg);
+    }
+
+    .header-container .symbols-list .symbols-list__item:nth-child(3) {
+        transform: translate(270px, 530px) rotate(159deg);
+    }
+
+    .header-container .symbols-list .symbols-list__item:nth-child(4) {
+        z-index: 100;
+        transform: translate(825px, 495px) rotate(21deg);
+    }
+
+    .header-container .symbols-list .symbols-list__item:nth-child(5) {
+        transform: translate(842px, 88px) rotate(345deg);
+    }
+
+    .header-container .symbols-list .symbols-list__item:nth-child(6) {
+        display: inline-block;
+        transform: translate(385px, 193px) rotate(15deg);
+    }
+}
+
+@mixin header_min500_max1024 {
+    .me-container__about-me-ext-button {
+        font-weight: 500;
+    }
+}
+
+$bg_ellipse2_base_Y_step:350px;
+@mixin header_max900 {
+    .header-container {
+        background-size: 450px $bg_ellipse2_base_Y_step;
+    }
+
+    .me-container {
+        margin-top: 100px;
+    }
+
+    .header-central-container__men-picture {
+        transition: none;
+        min-width: 400px;
+        margin: 225px 0 0 calc(#{fn_calc_resize(-150px,-370px,900px,570px)});
+    }
+
+    .header-container .symbols-list .symbols-list__item {
+        transition: all 0s;
+    }
+}
+
+@mixin header_min570_max900 {
+    .header-container .symbols-list .symbols-list__item:nth-child(1),
+    .header-container .symbols-list .symbols-list__item:nth-child(6) {
+        visibility: collapse;
+    }
+}
+
+@mixin header_max700 {
+    .header-container .symbols-list .symbols-list__item:nth-child(2),
+    .header-container .symbols-list .symbols-list__item:nth-child(3) {
+        visibility: collapse;
+    }
+}
+
+@mixin header_max640 {
+    .contact-item {
+        font-size: 20px;
+    }
+
+    .header-container .phone-number-call-back-button {
+        width: 26px;
+        height: 26px;
+        font-size: 0;
+        background-image: url("../img/icons.png");
+        background-repeat: no-repeat;
+        background-position: -352px -66px;
+        border: 0;
+    }
+}
+
+@mixin header_max570 {
+    .header-container {
+        height: auto;
+        background-position-y:195px;
+        background-size: 100% $bg_ellipse2_base_Y_step;
+    }
+
+    .header-central-container {
+        flex-direction: column-reverse;
+    }
+
+    .header-central-container__men-picture {
+        height: 50%;
+        max-width: 50px;
+        align-self: center;
+        margin: 0;
+    }
+
+    .me-container {
+        min-width: 100%;
+        margin: 0;
+    }
+
+    .me-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .me-container__name-text {
+        font-size: 42px;
+        line-height: 62px;
+    }
+
+    .me-container__spec-text {
+        font-size: 21px;
+        line-height: 42px;
+    }
+}
+
+@mixin header_max500 {
+    .header-container {
+        background-image: url("../img/_320/ellipse.svg");
+        background-size: 500px 294px;
+        background-position: -58px 174px;
+        padding-top: 1px;
+    }
+
+    .contact-item {
+        font-size: 18px;
+    }
+
+    .header-container .phone-number-call-back-button {
+        margin-left: 33px;
+    }
+
+    .me-container {
+        text-align: center;
+    }
+
+    .me-container__name-text {
+        font-size: 30px;
+        /*font-size: 29px; -Я*/
+        line-height: 51px;
+    }
+
+    .me-container__spec-text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .me-container__about-me-ext-button {
+        width: 280px;
+        height: 55px;
+        font-size: 16px;
+        padding: 19px 72px;
+        margin-top: 23px;
+    }
+
+    .header-central-container__men-picture {
+        max-width: 50px;
+        margin: 75px 0 0 238px;
+    }
+}
+
+@mixin header_max390 {
+    .header-container .symbols-list .symbols-list__item:nth-child(1) {
+        font-size: 23px;
+        transform: translate(33px, 67px) rotate(28deg);
+    }
+    .header-container .symbols-list .symbols-list__item:nth-child(2) {
+        font-size: 30px;
+        transform: translate(18px, 170px) rotate(18deg);
+        visibility: visible;
+    }
+
+    .header-container .symbols-list .symbols-list__item:nth-child(3) {
+        font-size: 20px;
+        transform: translate(78px, 48px) rotate(148deg);
+        visibility: visible;
+    }
+
+    .header-container .symbols-list .symbols-list__item:nth-child(4) {
+        font-size: 16px;
+        transform: translate(230px,96px) rotate(20deg);
+    }
+
+    .header-container .symbols-list .symbols-list__item:nth-child(5),
+    .header-container .symbols-list .symbols-list__item:nth-child(6) {
+        display: none;
+    }
+}
+
+@mixin header_min-device-pixel-ratio2_max640 {
+    .header-container .phone-number-call-back-button {
+        width: 52px;
+        height: 52px;
+        background-position: -263px -149px;
+    }
+}
+
+@mixin header_min-device-pixel-ratio3_max640 {
+    .header-container .phone-number-call-back-button {
+        width: 78px;
+        height: 78px;
+        background-position: -165px -10px;
+}
+}

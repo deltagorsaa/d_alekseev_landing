@@ -1,0 +1,22 @@
+@function fn_calc_resize(
+  $old_value,
+  $new_value,
+  $width_from,
+  $width_to
+) {
+  $one-pixel_step:0;
+  @if $old_value > $new_value
+  {
+    $one-pixel_step:($old_value - $new_value)/($width_from - $width_to);
+  } @else {
+    $one-pixel_step: ($new_value - $old_value )/($width_from - $width_to);
+  }
+
+  @if ($old_value > $new_value) {
+    $preRes:$old_value - $width_from * $one-pixel_step;
+    @return $preRes + ' + (100vw * (' + $one-pixel_step+'))';
+  } @else {
+    $preRes: $old_value + $width_from * $one-pixel_step;
+    @return '#{$preRes} - 100vw*#{$one-pixel_step}';
+  }
+}

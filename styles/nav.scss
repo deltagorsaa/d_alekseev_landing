@@ -1,0 +1,170 @@
+.header-container .navigation-menu {
+    transition: all 0s;
+    background-image: url("../img/icons.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    display: none;
+    outline: none;
+    border: 0;
+    margin-top: 8px;
+}
+
+.header-container .navigation-items-list {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+
+    .header-container .navigation-items-list .navigation__item {
+        transition: all 500ms;
+        margin-right: 32px;
+        padding: 3px 0;
+   }
+
+    .header-container .navigation-items-list .navigation__item:hover {
+        color: #fc557c;
+        border-bottom:1px solid #fc557c ;
+        padding-bottom: 1px;
+    }
+
+    .header-container .navigation-items-list .navigation__item-link:hover {
+        opacity: 100%;
+        transition: all 0ms;
+    }
+
+.footer-container .navigation-items-list .navigation__item {
+    color: #8993ad;
+    font-size: 18px;
+    line-height: 33px;
+}
+
+@mixin nav_max1024 {
+    .header-container .navigation-items-list {
+        display: none;
+    }
+
+    .header-container .navigation-menu {
+        display:inline-block;
+        width: 45px;
+        height: 32px;
+        background-position: -76px -232px;;
+        margin-top: 4px;
+    }
+
+    .header__navigation-menu_open {
+        position: fixed;
+        overflow-y: hidden;
+    }
+
+    .header__navigation-menu_open .header-container .navigation-menu {
+        width: 23px; height: 29px;
+        background-position:  -352px -112px;
+    }
+
+    .header__navigation-menu_open .header-container .navigation-items-list {
+        min-width:100vw;
+        background-color: rgba(255,255,255,0.95);
+        display: flex;
+        position: absolute;
+        margin: 25px 0 0 -20px;
+    }
+
+    .header__navigation-menu_open .header-container .navigation__item-link {
+        width: 270px;
+        height: 60px;
+        color: #ffffff;
+        background-color: #ff4e2e;
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .header__navigation-menu_open .header-container .navigation__item-link:hover {
+        transition:  all 500ms;
+        opacity: 35%;
+    }
+
+    .header__navigation-menu_open .header-container .navigation__item:hover {
+        border-bottom: none;
+    }
+}
+
+@mixin nav_orientation_portrait {
+    .header__navigation-menu_open .header-container .navigation-items-list {
+        flex-direction: column;
+        justify-content:space-around;
+        animation: 800ms ease-out 0s 1 forwards open_menu_left_animation;
+    }
+
+    .header__navigation-menu_open .header-container .navigation__item {
+        margin: 0 auto;
+    }
+
+    @keyframes open_menu_left_animation {
+        from { margin: 25px 0 0 -100vw; } to { margin: 25px 0 0 -20px; }
+    }
+}
+
+@mixin nav_orientation_landscape {
+    .header__navigation-menu_open .header-container .navigation-items-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content:center;
+
+        animation: 800ms ease-out 0s 1 forwards open_menu_bottom_animation;
+    }
+
+    .header__navigation-menu_open .header-container .navigation__item {
+        margin-bottom: 20px;
+    }
+
+    @keyframes open_menu_bottom_animation {
+        from { margin-top: 100vh; } to { margin-top: 25px; }
+    }
+}
+
+@mixin nav_max570 {
+    .footer-container .navigation-items-list .navigation__item {
+        font-size: 15px;
+        line-height: 33px;
+    }
+}
+
+@mixin nav_max500 {
+    .header-container .navigation-menu {
+        position: relative;
+        top:-2px;
+        left: -10px;
+        transform: scale(0.5);
+        margin-top: 5px;
+    }
+}
+
+@mixin nav_min-device-pixel-ratio2_max1024() {
+    .header-container .navigation-menu {
+        width: 90px;
+        height: 64px;
+        background-position: -99px -126px;
+    }
+
+    .header__navigation-menu_open .header-container .navigation-menu {
+        width: 46px;
+        height: 57px;
+        background-position: -10px -232px;
+    }
+}
+
+@mixin nav_min-device-pixel-ratio3_max1024() {
+    .header-container .navigation-menu {
+        width: 135px;
+        height: 96px;
+        background-position: -10px -10px;
+    }
+
+    .header__navigation-menu_open .header-container .navigation-menu {
+        width: 69px;
+        height: 86px;
+        background-position: -10px -126px;
+    }
+}

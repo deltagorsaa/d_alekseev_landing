@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="description" content="Dmitry Alekseev public site">
+
+    <title>Дмитрий Алексеев</title>
+
+    <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link href="styles/root.min.css" type="text/css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+</head>
+<body>
+    <header class="header-container">
+        <div class="fixed-container">
+            <ul class="symbols-list">
+                <li class="symbols-list__item">
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grd1" x1="0" x2="0" y1="0" y2="100%" >
+                                <stop stop-color="#fa0891" offset="0%"/>
+                                <stop stop-color="#f26522" offset="99%"/>
+                            </linearGradient>
+                        </defs>
+                        <text fill="url(#grd1)" x="0" y="60">{ }</text>
+                    </svg>
+                </li>
+
+                <li class="symbols-list__item">
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <text fill="url(#grd1)" x="0" y="60">#</text>
+                    </svg>
+                </li>
+
+                <li class="symbols-list__item">
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <text fill="url(#grd1)" y="30">&lt;/&gt;</text>
+                    </svg>
+                </li>
+
+                <li class="symbols-list__item">
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <text fill="url(#grd1)" x="0" y="60">&lt;div&gt;</text>
+                    </svg>
+                </li>
+
+                <li class="symbols-list__item">
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <text fill="url(#grd1)" x="0" y="60">&lt;div&gt;</text>
+                    </svg>
+                </li>
+
+                <li class="symbols-list__item">
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <text fill="url(#grd1)" x="0" y="60">&lt;/&gt;</text>
+                    </svg>
+                </li>
+            </ul>
+
+            <div class="header-top-container">
+
+                <nav class="header-navigation-container">
+                    <button class="navigation-menu" aria-label="Phone" ></button>
+                    <ul class="navigation-items-list">
+                        <li class="navigation__item"><a class="navigation__item-link" href="#services">Услуги</a> </li>
+                        <li class="navigation__item"><a class="navigation__item-link" href="#portfolio">Портфолио</a> </li>
+                        <li class="navigation__item"><a class="navigation__item-link" href="#price">Стоимость</a> </li>
+                    </ul>
+                </nav>
+
+                <div class="header-top-right-container">
+                    <address class="contact-item">
+                        <a href="tel:+79020000000">
+                            <span class="contact-item__text">+7 (499) 995-55-77</span>
+                        </a>
+                    </address>
+                    <button class="phone-number-call-back-button">Заказать звонок</button>
+                </div>
+            </div>
+
+            <div class="header-central-container">
+                <div class="me-container">
+                    <h1 class="me-container__name-text">Дмитрий Алексеев</h1>
+                    <strong class="me-container__spec-text">Frontend-разработчик&nbsp;и&nbsp;веб-верстальщик</strong>
+                    <button class="me-container__about-me-ext-button">Узнать&nbsp;больше</button>
+                </div>
+                <picture class="header-central-container__men-picture">
+                    <source media="(max-width:500px)" srcset="img/_320/1x/bg_man.webp 1x, img/_320/2x/bg_man@2x.webp 2x, img/_320/3x/bg_man@3x.webp 3x">
+                    <source media="(min-width:500px)" srcset="img/1x/bg_man.webp 1x, img/2x/bg_man@2x.webp 2x, img/3x/bg_man@3x.webp 3x">
+                    <source media="(max-width:500px)" srcset="img/_320/1x/bg_man.png 1x, img/_320/2x/bg_man@2x.png 2x, img/_320/3x/bg_man@3x.png 3x">
+                    <source media="(min-width:500px)" srcset="img/1x/bg_man.png 1x, img/2x/bg_man@2x.png 2x, img/3x/bg_man@3x.png 3x">
+                    <img src="img/1x/bg_man.png" srcset="img/2x/bg_man@2x.png 2x, img/3x/bg_man@3x.png 3x" alt="men">
+                </picture>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="services" class="what-i-do-container">
+            <div class="fixed-container">
+                <h2 class="what-i-do__text">Что я делаю</h2>
+                <ul class="what-i-do-items">
+                    <li class="what-i-do__item">
+                        <figure class="what-i-do__item-figure" >
+                            <picture class="what-i-do__item-picture">
+                                <source media="(max-width:570px)" srcset="img/_320/1x/tools-and-utensils.webp 1x,img/_320/2x/tools-and-utensils@2x.webp 2x,img/_320/3x/tools-and-utensils@3x.webp 3x">
+                                <source media="(min-width:570px)" srcset="img/1x/tools-and-utensils.webp 1x,img/2x/tools-and-utensils@2x.webp 2x,img/3x/tools-and-utensils@3x.webp 3x">
+                                <source media="(max-width:570px)" srcset="img/_320/1x/tools-and-utensils.png 1x,img/_320/2x/tools-and-utensils@2x.png 2x,img/_320/3x/tools-and-utensils@3x.png 3x">
+                                <source media="(min-width:570px)" srcset="img/1x/tools-and-utensils.png 1x,img/2x/tools-and-utensils@2x.png 2x,img/3x/tools-and-utensils@3x.png 3x">
+                                <img src="img/1x/tools-and-utensils.png" srcset="img/2x/tools-and-utensils@2x.png 2x,img/3x/tools-and-utensils@3x.png 3x" alt="tools-and-utensils">
+                            </picture>
+                            <figcaption>
+                                <strong class="what-i-do__item-text">Вёрстка лендинг-страниц и&nbsp;сайтов&nbsp;любой&nbsp;сложности</strong>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li class="what-i-do__item">
+                        <figure class="what-i-do__item-figure" >
+                            <picture class="what-i-do__item-picture">
+                                <source media="(max-width:570px)" srcset="img/_320/1x/responsive.webp 1x,img/_320/2x/responsive@2x.webp 2x, img/_320/3x/responsive@3x.webp 3x">
+                                <source media="(min-width:570px)" srcset="img/1x/responsive.webp 1x,img/2x/responsive@2x.webp 2x, img/3x/responsive@3x.webp 3x">
+                                <source media="(max-width:570px)" srcset="img/_320/1x/responsive.png 1x,img/_320/2x/responsive@2x.png 2x, img/_320/3x/responsive@3x.png 3x">
+                                <source media="(min-width:570px)" srcset="img/1x/responsive.png 1x,img/2x/responsive@2x.png 2x, img/3x/responsive@3x.png 3x">
+                                <img src="img/1x/responsive.png" srcset="img/2x/responsive@2x.png 2x, img/3x/responsive@3x.png 3x" alt="responsive">
+                            </picture>
+                            <figcaption>
+                                <strong class="what-i-do__item-text">Адаптивная&nbsp;вёрстка&nbsp;под&nbsp;все браузеры&nbsp;и&nbsp;устройства</strong>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li class="what-i-do__item">
+                        <figure class="what-i-do__item-figure" >
+                            <picture class="what-i-do__item-picture">
+                                <source media="(max-width:570px)" srcset="img/_320/1x/programming.webp 1x,img/_320/2x/programming@2x.webp 2x,img/_320/3x/programming@3x.webp 3x">
+                                <source media="(min-width:570px)" srcset="img/1x/programming.webp 1x,img/2x/programming@2x.webp 2x,img/3x/programming@3x.webp 3x">
+                                <source media="(max-width:570px)" srcset="img/_320/1x/programming.png 1x,img/_320/2x/programming@2x.png 2x,img/_320/3x/programming@3x.png 3x">
+                                <source media="(min-width:570px)" srcset="img/1x/programming.png 1x,img/2x/programming@2x.png 2x,img/3x/programming@3x.png 3x">
+                                <img src="img/1x/programming.png" srcset="img/2x/programming@2x.png 2x,img/3x/programming@3x.png 3x" alt="programming">
+                            </picture>
+                            <figcaption>
+                                <strong class="what-i-do__item-text">Frontend&nbsp;-&nbsp;разработка и&nbsp;программирование</strong>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <li class="what-i-do__item">
+                        <figure class="what-i-do__item-figure" >
+                            <picture class="what-i-do__item-picture">
+                                <source media="(max-width:570px)" srcset="img/_320/1x/coding.webp 1x,img/_320/2x/coding@2x.webp 2x,img/_320/3x/coding@3x.webp 3x">
+                                <source media="(min-width:570px)" srcset="img/1x/coding.webp 1x,img/2x/coding@2x.webp 2x,img/3x/coding@3x.webp 3x">
+                                <source media="(max-width:570px)" srcset="img/_320/1x/coding.png 1x,img/_320/2x/coding@2x.png 2x,img/_320/3x/coding@3x.png 3x">
+                                <source media="(min-width:570px)" srcset="img/1x/coding.png 1x,img/2x/coding@2x.png 2x,img/3x/coding@3x.png 3x">
+                                <img src="img/1x/coding.png" srcset="img/2x/coding@2x.png 2x,img/3x/coding@3x.png 3x" alt="coding">
+                            </picture>
+                            <figcaption>
+                                <strong class="what-i-do__item-text">Исправление&nbsp;и&nbsp;доработка существующей&nbsp;вёрстки</strong>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <button class="what-i-do__how-cost-button" type="button">Узнать&nbsp;стоимость</button>
+            </div>
+        </section>
+
+        <section id="portfolio" class="my-portfolio-container">
+            <div class="fixed-container">
+                <h2 class="my-portfolio__text">Примеры моих работ</h2>
+
+                <div class="image-slider-container">
+
+                    <button class="image-slider__left-button" aria-label="move-portfolio-left"></button>
+
+                    <ul class="image-slider-items">
+                        <li class="image-slider__item">
+                            <figure class="my-portfolio__item-figure">
+                                <picture class="my-portfolio__item-picture">
+                                    <source media="(max-width:500px)"
+                                            srcset="img/_320/1x/vera_antonova.webp 1x, img/_320/2x/vera_antonova@2x.webp 2x,img/_320/3x/vera_antonova@3x.webp 3x">
+                                    <source media="(max-width:1024px)"
+                                            srcset="img/_1024/1x/vera_antonova.webp 1x, img/_1024/2x/vera_antonova@2x.webp 2x,img/_1024/3x/vera_antonova@3x.webp 3x">
+                                    <source media="(min-width:1024px)"
+                                            srcset="img/1x/vera_antonova.webp 1x, img/2x/vera_antonova@2x.webp 2x,img/3x/vera_antonova@3x.webp 3x">
+
+                                    <source media="(max-width:500px)"
+                                            srcset="img/_320/1x/vera_antonova.jpg 1x, img/_320/2x/vera_antonova@2x.jpg 2x,img/_320/3x/vera_antonova@3x.jpg 3x">
+                                    <source media="(max-width:1024px)"
+                                            srcset="img/_1024/1x/vera_antonova.jpg 1x, img/_1024/2x/vera_antonova@2x.jpg 2x,img/_1024/3x/vera_antonova@3x.jpg 3x">
+                                    <source media="(min-width:1024px)"
+                                            srcset="img/1x/vera_antonova.jpg 1x, img/2x/vera_antonova@2x.jpg 2x,img/3x/vera_antonova@3x.jpg 3x">
+
+                                    <img src="img/1x/vera_antonova.jpg"
+                                         srcset="img/2x/vera_antonova@2x.jpg 2x,img/3x/vera_antonova@3x.jpg 3x"
+                                         alt="vera_antonova">
+                                </picture>
+                                <figcaption>
+                                    <strong class="my-portfolio__item-text">Сайт психолога Веры Антоновой</strong>
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li class="image-slider__item">
+                            <figure class="my-portfolio__item-figure">
+                                <picture class="my-portfolio__item-picture">
+                                    <source media="(max-width:500px)"
+                                            srcset="img/_320/1x/children_shop.webp 1x, img/_320/2x/children_shop@2x.webp 2x,img/_320/3x/children_shop@3x.webp 3x">
+                                    <source media="(max-width:1024px)"
+                                            srcset="img/_1024/1x/children_shop.webp 1x, img/_1024/2x/children_shop@2x.webp 2x,img/_1024/3x/children_shop@3x.webp 3x">
+                                    <source media="(min-width:1024px)"
+                                            srcset="img/1x/children_shop.webp 1x, img/2x/children_shop@2x.webp 2x,img/3x/children_shop@3x.webp 3x">
+
+                                    <source media="(max-width:500px)"
+                                            srcset="img/_320/1x/children_shop.jpg 1x, img/_320/2x/children_shop@2x.jpg 2x,img/_320/3x/children_shop@3x.jpg 3x">
+                                    <source media="(max-width:1024px)"
+                                            srcset="img/_1024/1x/children_shop.jpg 1x, img/_1024/2x/children_shop@2x.jpg 2x,img/_1024/3x/children_shop@3x.jpg 3x">
+                                    <source media="(min-width:1024px)"
+                                            srcset="img/1x/children_shop.jpg 1x, img/2x/children_shop@2x.jpg 2x,img/3x/children_shop@3x.jpg 3x">
+
+                                    <img src="img/1x/children_shop.jpg"
+                                         srcset="img/2x/children_shop@2x.jpg 2x,img/3x/children_shop@3x.jpg 3x"
+                                         alt="children_shop">
+                                </picture>
+                                <figcaption>
+                                    <strong class="my-portfolio__item-text">Сайт магазина детской одежды</strong>
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li class="image-slider__item">
+                            <figure class="my-portfolio__item-figure">
+                                <picture class="my-portfolio__item-picture">
+                                    <source media="(max-width:500px)"
+                                            srcset="img/_320/1x/ribolov_shop.webp 1x, img/_320/2x/ribolov_shop@2x.webp 2x,img/_320/3x/ribolov_shop@3x.webp 3x">
+                                    <source media="(max-width:1024px)"
+                                            srcset="img/_1024/1x/ribolov_shop.webp 1x, img/_1024/2x/ribolov_shop@2x.webp 2x,img/_1024/3x/ribolov_shop@3x.webp 3x">
+                                    <source media="(min-width:1024px)"
+                                            srcset="img/1x/ribolov_shop.webp 1x, img/2x/ribolov_shop@2x.webp 2x,img/3x/ribolov_shop@3x.webp 3x">
+
+                                    <source media="(max-width:500px)"
+                                            srcset="img/_320/1x/ribolov_shop.jpg 1x, img/_320/2x/ribolov_shop@2x.jpg 2x,img/_320/3x/ribolov_shop@3x.jpg 3x">
+                                    <source media="(max-width:1024px)"
+                                            srcset="img/_1024/1x/ribolov_shop.jpg 1x, img/_1024/2x/ribolov_shop@2x.jpg 2x,img/_1024/3x/ribolov_shop@3x.jpg 3x">
+                                    <source media="(min-width:1024px)"
+                                            srcset="img/1x/ribolov_shop.jpg 1x, img/2x/ribolov_shop@2x.jpg 2x,img/3x/ribolov_shop@3x.jpg 3x">
+
+                                    <img src="img/1x/ribolov_shop.jpg"
+                                         srcset="img/2x/ribolov_shop@2x.jpg 2x,img/3x/ribolov_shop@3x.jpg 3x"
+                                         alt="ribolov_shop">
+                                </picture>
+                                <figcaption>
+                                    <strong class="my-portfolio__item-text">Сайт магазина «Рыболов»</strong>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+
+                    <button class="image-slider__right-button" aria-label="move-portfolio-right"></button>
+
+                    <ul class="image-slider-visual-round-list"></ul>
+                </div>
+
+                <button class="my-portfolio__order-project-button" type="button">Заказать проект</button>
+            </div>
+        </section>
+
+        <section id="price" class="pre-footer-container">
+            <div class="fixed-container">
+                <ul class="symbols-list">
+                    <li class="symbols-list__item">{ }</li>
+                    <li class="symbols-list__item">&lt;div&gt;</li>
+                    <li class="symbols-list__item">#</li>
+                    <li class="symbols-list__item">&lt;/&gt;</li>
+                    <li class="symbols-list__item">{ }</li>
+                </ul>
+
+                <h2 class="pre-footer-container__main-text">Адаптивная вёрстка под все устройства и&nbsp;браузеры&nbsp;от
+                    1000 рублей всего за&nbsp;4&nbsp;часа.*</h2>
+                <strong class="pre-footer-container__ext-text"><span>*&nbsp;</span><span>Срок&nbsp;и&nbsp;стоимость&nbsp;могут&nbsp;отличаться от&nbsp;заявленных и&nbsp;рассчитываются индивидуально, в&nbsp;зависимости от&nbsp;сложности задач.</span></strong>
+            </div>
+        </section>
+        <div class="feedback-container">
+            <div class="fixed-container">
+                <form class="feedback-form" action="#" method="post" name="feedback-form">
+                    <fieldset class="feedback-form-fieldset">
+                        <legend class="feedback-form__header-text"></legend>
+                        <div class="feedback-form-inputs">
+                            <div class="feedback-form-input">
+                                <label class="feedback-form-input__label-text" for="name">Как к Вам обращаться</label>
+                                <input class="feedback-form-input__name-input" id="name" type="text" name="name"
+                                       maxlength="50"  required>
+                            </div>
+
+                            <div class="feedback-form-input">
+                                <label class="feedback-form-input__label-text" for="phone">Контактный телефон</label>
+                                <input class="feedback-form-input__phone-input" id="phone" type="tel" name="phone"
+                                       maxlength="15" required>
+                            </div>
+
+                            <div class="feedback-form-input feedback-form-input-email">
+                                <label class="feedback-form-input__label-text" for="email">E-Mail</label>
+                                <input class="feedback-form-input__email-input" id="email" type="email" name="email"
+                                       maxlength="20" required>
+                            </div>
+                        </div>
+                        <input class="feedback-form__submit-button" type="submit" value="Отправить">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer-container">
+        <div class="fixed-container">
+            <nav class="footer-navigation-container">
+                <ul class="navigation-items-list">
+                    <li class="navigation__item"><a class="navigation__item-link" href="#services">Услуги</a></li>
+                    <li class="navigation__item"><a class="navigation__item-link" href="#portfolio">Портфолио</a></li>
+                    <li class="navigation__item"><a class="navigation__item-link" href="#price">Стоимость</a></li>
+                </ul>
+            </nav>
+
+            <div class="contacts-container">
+                <address class="contact-item">
+                    <a href="tel:+79020000000">
+                        <i class="contact-item__icon contact-item__icon_phone"></i>
+                        <span class="contact-item__text">+7 (499) 995-77-55</span>
+                    </a>
+                </address>
+
+                <address class="contact-item">
+                    <a href="mailto:dmitry@alekseev.com">
+                        <i class="contact-item__icon contact-item__icon_email"></i>
+                        <span class="contact-item__text">dmitry@alekseev.com</span>
+                    </a>
+                </address>
+            </div>
+
+            <div class="ext-contacts-container">
+                <button class="phone-number-call-back-button">Заказать звонок</button>
+                <div class="social-networks-container">
+                    <a href="#" aria-label="vk"><span class="social-networks-font social-networks-font__vk"></span></a>
+                    <a href="#" aria-label="facebook"><span class="social-networks-font social-networks-font__facebook"></span></a>
+                    <a href="#" aria-label="twitter"><span class="social-networks-font social-networks-font__twitter"></span></a>
+                    <a href="#" aria-label="instagram"><span class="social-networks-font social-networks-font__instagram"></span></a>
+                </div>
+            </div>
+        </div>
+        <span class="footer-container__end-text">&copy;&nbsp;Дмитрий Алексеев,&nbsp;2016&nbsp;-&nbsp;2018</span>
+    </footer>
+    <script src="scripts/jquery-3.5.1.min.js"></script>
+    <script src="scripts/main.min.js"></script>
+</body>
+</html>
