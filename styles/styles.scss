@@ -50,7 +50,7 @@ picture {
     display: inline-block;
 }
 
-a:hover, button:hover {
+a:hover, button:hover,input:hover {
     transition:  all 500ms;
     opacity: 35%;
     cursor:pointer;
@@ -58,7 +58,7 @@ a:hover, button:hover {
 }
 
 @media (pointer:coarse) {
-    a:hover, button:hover {
+    a:hover, button:hover,input:hover {
         transition:  all 0ms;
         opacity: 1;
     }

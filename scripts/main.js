@@ -1,15 +1,4 @@
 $(function () {
-    const setStaticBody = function (flag,elementToSetHeightSelector) {
-        if (flag == true) {
-            $('body').width($(window).width());
-
-            let mainStartPosition=$('.header-central-container').position().top;
-            $(elementToSetHeightSelector).css('max-height',($(window).height()-mainStartPosition)+'px');
-        } else {
-            $('body').width('');
-            $(elementToSetHeightSelector).css('max-height','');
-        }
-    }
     const setPopup=function (openButtonSelector,closeButtonSelector,changeClassName,elementToSetHeightSelector) {
         let openButton=$(openButtonSelector);
         let bodyElement=$('body');
@@ -17,28 +6,42 @@ $(function () {
         openButton.on('click',function () {
             if (bodyElement.hasClass(changeClassName) == false) {
                 bodyElement.addClass(changeClassName);
-                setStaticBody(true,elementToSetHeightSelector);
-                $(window).on('resize', function () { setStaticBody(true,elementToSetHeightSelector); });
+
+                if (elementToSetHeightSelector!=null) {
+                    let mainStartPosition = $(elementToSetHeightSelector).parent().position().top;
+                    $(elementToSetHeightSelector).css('max-height', ($(window).height() - mainStartPosition) + 'px');
+                }
+
                 $(closeButtonSelector).on('click',function (evt) {
                     if (bodyElement.hasClass(changeClassName) == true && evt.target==this) {
                         bodyElement.removeClass(changeClassName);
-                        setStaticBody(false,elementToSetHeightSelector);
-                        $(window).off('resize');
+
+                        if (elementToSetHeightSelector!=null) {
+                           $(elementToSetHeightSelector).css('max-height', '');
+                        }
+
                         $(closeButtonSelector).off('click');
                         if (openButtonSelector==closeButtonSelector) { setPopup(openButtonSelector,closeButtonSelector,changeClassName,elementToSetHeightSelector); }
                     }
                 });
             }
         });
-
     }
+
     const setMenuEvents=function(menuSelector, menuButtonSelector,changeClassName,elementToSetHightSelector)
     {
         setPopup(menuButtonSelector,menuButtonSelector,changeClassName,elementToSetHightSelector);
-        $(menuSelector+'>* a').each(function (index,elm) {
-            $(elm).on('click',function () {
-                $(menuButtonSelector).click();
-            });
+
+        $(menuSelector+'>* a').on('click',function () {
+            $(menuButtonSelector).click();
+        });
+
+        $('a[href^="#"]').on('click',function(evt){
+            let elm = $(this).attr('href');
+            $('html').animate({
+                scrollTop: $(elm).offset().top
+            },700);
+            evt.preventDefault();
         });
     }
     const setSlider=function(sliderSelector) {
@@ -192,7 +195,7 @@ $(function () {
     }
     const setFeedBackButtonsEvents=function(buttonSelectorData,feedbackContainer,elementToSetHeightSelector) {
         $(buttonSelectorData).each(function (index,feedbackButton) {
-            setPopup(feedbackButton[0],'.feedback-container','feedback-container__self_open',elementToSetHeightSelector);
+            setPopup(feedbackButton[0],'.feedback-container, .feedback-container-close__button','feedback-container__self_open',elementToSetHeightSelector);
             $(feedbackButton[0]).on('click',function () {
 
                 $('.feedback-form-input__name-input, .feedback-form-input__email-input, .feedback-form-input__phone-input').each(function (input_index,input_elem) {
@@ -222,5 +225,5 @@ $(function () {
         ['.phone-number-call-back-button',false,'Заказ обратного звонка'],
         ['.what-i-do__how-cost-button',false,'Запрос цены'],
         ['.my-portfolio__order-project-button',false,'Заказ проекта']
-    ],'.feedback-container','');
+    ],'.feedback-container',null);
 });
