@@ -231,9 +231,6 @@ $(function () {
         $(feedBackPhoneInputSelector).attr('pattern',feedBackPhoneFullValidatePattern);
         $(feedBackEmailInputSelector).attr('pattern',feedBackEmailValidatePattern);
 
-        $(feedbackSubmitButtonSelector).on('submit',function () {
-
-        });
     };
 
     setServiceWorker();
