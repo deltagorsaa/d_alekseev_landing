@@ -178,17 +178,17 @@
 }
 
 .feedback-container-close__button {
-  width: 23px;
-  height: 29px;
+  width: 30px;
+  height: 30px;
   background-image: url("../img/icons.png");
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(150, 150, 150, 0.3);
   background-repeat: no-repeat;
-  background-position: -352px -112px;
+  background-position: -348px -112px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 30px;
   position: absolute;
-  right: -5px;
-  top: -5px;
+  right: -20px;
+  top: -20px;
   z-index: 2000;
 }
 
@@ -226,7 +226,7 @@
 .feedback-form {
   background-color: #F8F8F8;
   border-radius: 30px;
-  padding: 25px;
+  padding: 25px 20px;
   animation: 400ms linear 0s 1 forwards feedback-form__animation;
 }
 
@@ -263,12 +263,14 @@
 
 .feedback-container .feedback-form__header-text {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 900;
+  text-align: center;
   border-bottom: 1px solid black;
   padding-bottom: 5px;
 }
 
 .feedback-form-input__label-text {
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -280,10 +282,18 @@
 .feedback-form-input__email-input,
 .feedback-form-input__phone-input {
   height: 40px;
-  color: #f53f4f;
+  color: #000000;
+  outline: none;
   background-color: transparent;
   border: 1px solid #f82370;
+  border-radius: 7px;
   padding: 15px 10px;
+}
+
+.feedback-form-input__name-input:focus,
+.feedback-form-input__email-input:focus,
+.feedback-form-input__phone-input:focus {
+  opacity: 1;
 }
 
 .feedback-form__submit-button {

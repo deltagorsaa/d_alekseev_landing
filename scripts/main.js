@@ -40,7 +40,7 @@ $(function () {
             let elm = $(this).attr('href');
             $('html').animate({
                 scrollTop: $(elm).offset().top
-            },700);
+            },300);
             evt.preventDefault();
         });
     }
@@ -212,6 +212,29 @@ $(function () {
             });
         });
     }
+    const setFeedBackInputTextLimits=function(feedBackNameInputSelector,feedBackEmailInputSelector,feedBackPhoneInputSelector,feedbackSubmitButtonSelector) {
+        const feedBackNameValidatePattern='([a-zA-Zа-яА-Я\\s]{4,50})';
+        const feedBackPhoneValidatePattern='^[+]\\d{0,15}$';
+        const feedBackPhoneFullValidatePattern='^[+]\\d{6,15}$';
+        const feedBackEmailValidatePattern='(^[a-zA-Z]).*[@](.{1,})[.][a-zA-Z]{2,}';
+
+        $(feedBackNameInputSelector).on('keypress',function (evtdata) {
+            if (!evtdata.key.match('[a-zA-Zа-яА-Я\\s]')) {evtdata.preventDefault();}
+        });
+
+        $(feedBackPhoneInputSelector).on('keypress',function (evtdata) {
+            let txt=$(feedBackPhoneInputSelector)[0].value+evtdata.key;
+            if (!txt.match(feedBackPhoneValidatePattern)) {evtdata.preventDefault();}
+        });
+
+        $(feedBackNameInputSelector).attr('pattern',feedBackNameValidatePattern);
+        $(feedBackPhoneInputSelector).attr('pattern',feedBackPhoneFullValidatePattern);
+        $(feedBackEmailInputSelector).attr('pattern',feedBackEmailValidatePattern);
+
+        $(feedbackSubmitButtonSelector).on('submit',function () {
+
+        });
+    };
 
     setServiceWorker();
     setSlider('.my-portfolio-container .image-slider-container');
@@ -226,4 +249,9 @@ $(function () {
         ['.what-i-do__how-cost-button',false,'Запрос цены'],
         ['.my-portfolio__order-project-button',false,'Заказ проекта']
     ],'.feedback-container',null);
+    setFeedBackInputTextLimits(
+        '.feedback-form-input__name-input',
+        '.feedback-form-input__email-input',
+        '.feedback-form-input__phone-input',
+        '.feedback-form__submit-button');
 });

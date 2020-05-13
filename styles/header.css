@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: 2500ms linear 0s 1 forwards header-top-container__animation;
+  animation: 1500ms linear 0s 1 forwards header-top-container__animation;
 }
 
 @keyframes header-top-container__animation {
@@ -52,7 +52,7 @@
 .me-container {
   min-width: 800px;
   margin-top: 209px;
-  animation: 2500ms linear 0s 1 forwards me-container__animation;
+  animation: 1500ms linear 0s 1 forwards me-container__animation;
 }
 
 @keyframes me-container__animation {
@@ -109,7 +109,7 @@
 }
 
 .header-container .symbols-list .symbols-list__item {
-  animation: calc(2500ms + 0.5s) linear 0s 1 forwards symbols-list__animation;
+  animation: calc(1500ms + 0.5s) linear 0s 1 forwards symbols-list__animation;
   transition: all 1500ms ease-out 0ms;
 }
 
