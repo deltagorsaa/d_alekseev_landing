@@ -212,7 +212,7 @@
   position: relative;
 }
 
-@media (max-height: 450px) {
+@media (max-height: 570px) {
   .feedback-container__self_open .feedback-container {
     justify-content: flex-start;
     overflow-y: scroll;
