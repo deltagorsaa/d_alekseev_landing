@@ -378,7 +378,7 @@ picture {
 }
 
 a:hover, button:hover, input:hover {
-  transition: all 500ms;
+  transition: all 300ms;
   opacity: 35%;
   cursor: pointer;
   outline: none;
@@ -580,7 +580,7 @@ a:hover, button:hover, input:hover {
 .header-container .navigation-items-list .navigation__item:hover {
   color: #fc557c;
   border-bottom: 1px solid #fc557c;
-  padding-bottom: 1px;
+  padding: 2px 0;
 }
 
 .header-container .navigation-items-list .navigation__item-link:hover {

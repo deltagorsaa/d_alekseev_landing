@@ -1,5 +1,5 @@
 const cache_name = 'land_cache';
-const cache_res_list=[
+const cache_res_list = [
     '200.html',
     'styles/200.min.css',
     'fonts/roboto-v20-latin_cyrillic-regular.woff2',
@@ -25,7 +25,7 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
     event.respondWith(networkOrCache(event.request)
-        .catch(() =>fromCache(new Request('200.html')) ));
+        .catch(() => fromCache(new Request('200.html')) ));
 });
 
 function networkOrCache(request) {

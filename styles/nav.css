@@ -24,7 +24,7 @@
 .header-container .navigation-items-list .navigation__item:hover {
   color: #fc557c;
   border-bottom: 1px solid #fc557c;
-  padding-bottom: 1px;
+  padding: 2px 0;
 }
 
 .header-container .navigation-items-list .navigation__item-link:hover {
